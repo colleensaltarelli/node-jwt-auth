@@ -15,7 +15,9 @@ const UserSchema = mongoose.Schema({
     required: true
   },
   firstName: {type: String, default: ''},
-  lastName: {type: String, default: ''}
+  lastName: {type: String, default: ''},
+  timeEntries: [{state: Date.now(), end: Date.now(), description: {type: String}}],
+  admin: false
 });
 
 UserSchema.methods.apiRepr = function() {
